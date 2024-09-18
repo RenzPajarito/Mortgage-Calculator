@@ -35,12 +35,12 @@ const MortgageCalculator: React.FC = () => {
   }
 
   return (
-    <div className="container w-screen h-screen bg-blue-100 flex justify-center items-center p-2">
+    <div className="container w-screen h-screen bg-blue-100 flex justify-center items-center p-2 pt-32 sm:pt-0">
       <div className="wrapper grid sm:grid-cols-2 sm:grid-rows-1 grid-rows-2 rounded-2xl overflow-hidden shadow-lg bg-gray-100">
-        <div className="calculator w-auto h-auto py-10 bg-gray-100">
+        <div className="calculator py-10 bg-gray-100">
           <form className="w-full h-full" onSubmit={calculateRepayment}>
             <div className="flex justify-between px-8 py-4">
-              <h1 className="text-xl font-semibold">Mortgage Calculator</h1>
+              <h1 className="text-slate-800 text-xl font-semibold">Mortgage Calculator</h1>
               <button
                 type="button"
                 className="text-sm text-slate-500 underline"
@@ -146,15 +146,14 @@ const MortgageCalculator: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="result w-auto h-auto bg-slate-700 rounded-bl-3xl p-6">
-          
+        <div className="result bg-slate-700 sm:rounded-bl-3xl p-6">
           {monthlyPayment !== null ? (
-            <div className=''>
+            <div className='w-full'>
                 <h1 className="text-lg font-bold text-slate-100">Your results</h1>
-                <p className='text-sm font-normal text-slate-200 py-4'>Your results are shown below based on the information you provided. To adjust the results,
+                <p className='text-sm font-normal text-wrap text-slate-200 py-4 sm:w-96'>Your results are shown below based on the information you provided. To adjust the results,
                     edit the form and click the "calculate repayments" again.
                 </p>
-                <div className='w-full h-full bg-slate-900 p-4 rounded-md'>
+                <div className='bg-slate-900 p-4 rounded-md'>
                     <p className='text-sm text-slate-400 py-1'>Your monthly repayments</p>
                     <p className="text-4xl font-semibold text-yellow-300">${monthlyPayment.toFixed(2)}</p>
                 </div>
@@ -163,7 +162,7 @@ const MortgageCalculator: React.FC = () => {
             <div className='relative h-full flex justify-center items-center flex-col'>
                 <img src={Illustration} alt="Illustration" />
                 <h1 className="text-lg font-bold text-slate-100">Result shown here</h1>
-                <p className="text-sm font-normal text-slate-200 text-center">Complete the form and click "Calculate Repayments" to see what your monthly repayments would be.</p>
+                <p className="text-sm font-normal text-slate-200 text-center sm:w-96">Complete the form and click "Calculate Repayments" to see what your monthly repayments would be.</p>
                 <p className='absolute bottom-0 text-slate-400'>©2024 ZernCodes. All rights reserved</p>
             </div>
           )}
